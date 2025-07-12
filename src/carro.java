@@ -1,18 +1,21 @@
 public class carro {
     private float strength;
     private float distance;
-    private int ano;
-    private String marca;
+    private int year;
+    private String brand;
+    private String nome;
+    private float torque;
+    private int rpm;
 
     public carro(float strength, float distance, int ano, String marca, String nome) {
         this.strength = strength;
         this.distance = distance;
-        this.ano = ano;
-        this.marca = marca;
+        this.year = ano;
+        this.brand = marca;
         this.nome = nome;
     }
 
-    private String nome;
+
 
     public float getStrength() {
         return strength;
@@ -30,20 +33,20 @@ public class carro {
         this.distance = distance;
     }
 
-    public int getAno() {
-        return ano;
+    public int getYear() {
+        return year;
     }
 
-    public void setAno(int ano) {
-        this.ano = ano;
+    public void setYear(int year) {
+        this.year = year;
     }
 
-    public String getMarca() {
-        return marca;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public String getNome() {
@@ -52,5 +55,21 @@ public class carro {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public float getTorque() {
+        return torque;
+    }
+
+    public void setTorque(float torque) {
+        this.torque = torque;
+    }
+
+    public int getRpm() {
+        return rpm;
+    }
+
+    public void setRpm(int rpm) {
+        this.rpm = rpm;
     }
 }
