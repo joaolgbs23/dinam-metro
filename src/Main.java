@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class Main {
     public static Scanner sc = new Scanner(System.in);
     static carro opala6c = new carro(75,3,1970, "chevrolet", "opala");
+
+
     public static void main(String[] args) {
-        float strength = opala6c.getStrength(); //retorna o valor de força do carro
-        float distance = opala6c.getDistance();
-        float resultadoT = torqueCalculator(distance, strength);
-        float resultadoC = cvCalculator(opala6c.getTorque(), opala6c.getRpm());
+        torqueCalculator(opala6c.getDistance(), opala6c.getStrength()); //otimização do código
+        cvCalculator(opala6c.getTorque());
 
 
         //utilizarei um metodo com retorno para calcular a potência de um carro
@@ -22,13 +22,12 @@ public class Main {
         System.out.println("o torque do seu carro é:" +torque);
         return torque;
     }
-    public static float cvCalculator(float torque, int rpm){
+    public static float cvCalculator(float torque){
         System.out.println("digite a quantos rpm você deseja saber a potencia do seu carro:");
-        int rotaçõesPorSegundo = sc.nextInt();
-        opala6c.setRpm(rotaçõesPorSegundo);
-        float resultadoemcv = (torque * rotaçõesPorSegundo) /7121; //calculo para cv de potência em cavalos
+        opala6c.setRpm(sc.nextInt());
+        float resultadoemcv = (torque * opala6c.getRpm()) /7121; //calculo para cv de potência em cavalos
         System.out.println("a potencia do seu carro é:"+ resultadoemcv);
 
-        return resultadoemcv;
+        return (torque * opala6c.getRpm() /7121 );
     }
 }
